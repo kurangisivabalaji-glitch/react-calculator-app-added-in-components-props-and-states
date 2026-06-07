@@ -1,0 +1,152 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(-45deg, #6a11cb, #2575fc, #ff6b6b, #ffb347);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+}
+
+/* Animated Background */
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.calculator-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Glassmorphism Calculator */
+.calculator {
+  width: 340px;
+  padding: 25px;
+  border-radius: 25px;
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%,100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Display */
+.display {
+  background: rgba(0,0,0,0.4);
+  color: #00ffcc;
+  font-size: 2.3rem;
+  text-align: right;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  min-height: 50px;
+  box-shadow: inset 0 0 15px rgba(0,255,204,0.5);
+  overflow-x: auto;
+}
+
+/* Grid */
+.buttons-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+/* Buttons */
+button {
+  padding: 18px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(145deg, #6a11cb, #2575fc);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+/* Hover Effect */
+button:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 0 20px rgba(255,255,255,0.5);
+}
+
+/* Click Effect */
+button:active {
+  transform: scale(0.95);
+}
+
+/* Clear Button */
+.clear-btn {
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+}
+
+.clear-btn:hover {
+  box-shadow: 0 0 20px #ff416c;
+}
+
+/* Equal Button */
+.equal-btn {
+  background: linear-gradient(135deg, #00c853, #64dd17);
+}
+
+.equal-btn:hover {
+  box-shadow: 0 0 20px #00ff66;
+}
+
+/* Number Buttons Glow */
+button:nth-child(n) {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 5px rgba(255,255,255,0.2);
+  }
+
+  50% {
+    box-shadow: 0 0 15px rgba(255,255,255,0.6);
+  }
+
+  100% {
+    box-shadow: 0 0 5px rgba(255,255,255,0.2);
+  }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .calculator {
+    width: 90%;
+  }
+
+  button {
+    padding: 15px;
+    font-size: 1.1rem;
+  }
+
+  .display {
+    font-size: 1.8rem;
+  }
+}
